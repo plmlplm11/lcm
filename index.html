@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('22ca3d21e82b67c2b33aafbacbff4d49');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '찬민이 돌잔치 초대장',
+        description: '아래 버튼을 눌러 초대장을 확인해주세요!',
+        imageUrl:
+          'https://rb-wp-prod.sfo3.cdn.digitaloceanspaces.com/2020/12/%EB%8F%8C%EC%9E%94%EC%B9%981-scaled-1.jpg',
+        link: {
+          mobileWebUrl: 'https://tpl64.quv.kr',
+          webUrl: 'https://tpl64.quv.kr',
+        },
+      },
+      social: {
+        likeCount: 999, //99999가 최대입니다
+        commentCount: 999, //99999가 최대입니다
+        sharedCount: 999, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '초대장 확인하기',
+          link: {
+            mobileWebUrl: 'https://tpl64.quv.kr',
+            webUrl: 'https://tpl64.quv.kr',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
